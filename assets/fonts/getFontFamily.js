@@ -1,24 +1,4 @@
 import { useFonts } from "expo-font";
-import { Text } from "react-native";
-
-// export const useCustomFonts = () => {
-//   const [fontsLoaded] = useFonts({
-//     "Roboto-Black": require("../fonts/Roboto-Black.ttf"),
-//     "Roboto-Regular": require("../fonts/Roboto-Regular.ttf"),
-//   });
-
-//   const getFontFamily = (weight) => {
-
-//     switch (weight) {
-//       case "900":
-//         return "Roboto-Black";
-//       default:
-//         return "Roboto-Regular"; // default font family
-//     }
-//   };
-
-//   return { fontsLoaded, getFontFamily };
-// };
 
 export const getFontFamily = (weight) => {
   const [fontsLoaded] = useFonts({
@@ -35,6 +15,7 @@ export const getFontFamily = (weight) => {
     "Roboto-Black": require("../fonts/Roboto-Black.ttf"),
     "Roboto-Black-Italic": require("../fonts/Roboto-BlackItalic.ttf")
   });
+
   if (!fontsLoaded) {
     return "";
   };

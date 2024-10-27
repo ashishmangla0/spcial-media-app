@@ -14,7 +14,20 @@ import UserPost from "./components/UserPost/UserPost";
 import UserStory from "./components/UserStory/UserStory";
 import FontAwesomeicons from "@expo/vector-icons/FontAwesome6";
 import globalStyle from "./assets/styles/globalStyle";
-import { getFontFamily} from "./assets/fonts/getFontFamily";
+import Title from "./components/Title/Title";
+// import { getFontFamily} from "./assets/fonts/getFontFamily";
+import {Dimensions} from 'react-native';
+
+const { width, height } = Dimensions.get('window');
+
+
+
+
+
+
+
+
+
 
 
 const userStories = [
@@ -253,7 +266,7 @@ export default function App() {
           ListHeaderComponent={
             <>
               <View style={globalStyle.header}>
-               
+              <Title title={'Let’s Explore'} />
                 <TouchableOpacity>
                   <FontAwesomeicons
                     name="envelope"

@@ -1,11 +1,13 @@
 import {StyleSheet} from 'react-native';
-// import {getFontFamily} from '../../assets/fonts/helper';
+import { scaleFontSize, verticalScale } from '../../assets/styles/scaling';
+
+
 
 const style = StyleSheet.create({
   title: {
     color: '#022150',
-    // fontFamily: getFontFamily('Inter', '600'),
-    fontSize: 24,
+    fontSize: scaleFontSize(24),
+    marginBottom: verticalScale(24)
   },
 });
 
