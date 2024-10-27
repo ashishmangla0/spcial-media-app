@@ -247,52 +247,41 @@ export default function App() {
       <SafeAreaView>
         <StatusBar />
         
-                <Text style={{fontFamily: getFontFamily('100'), fontSize:30}}> Let’s Explore 100 </Text>
-                <Text style={{fontFamily: getFontFamily('100i'), fontSize:30}}> Let’s Explore 100 </Text>
-                <Text style={{fontFamily: getFontFamily('300'),fontSize:30}}> Let’s Explore 300 </Text>
-                <Text style={{fontFamily: getFontFamily('300i'),fontSize:30}}> Let’s Explore 300 </Text>
-                <Text style={{fontFamily: getFontFamily('400'),fontSize:30}}> Let’s Explore 400 </Text>  
-                <Text style={{fontFamily: getFontFamily('400i'),fontSize:30}}> Let’s Explore 400 </Text>  
-                <Text style={{fontFamily: getFontFamily('500'),fontSize:30 }}> Let’s Explore 500 </Text>
-                <Text style={{fontFamily: getFontFamily('500i'),fontSize:30 }}> Let’s Explore 500 </Text>
-                <Text style={{fontFamily: getFontFamily('700'),fontSize:30 }}> Let’s Explore 700 </Text>
-                <Text style={{fontFamily: getFontFamily('700i'),fontSize:30 }}> Let’s Explore 700 </Text>
-                <Text style={{fontFamily: getFontFamily('900'),fontSize:30 }}> Let’s Explore 900 </Text>
-                <Text style={{fontFamily: getFontFamily('900i'),fontSize:30 }}> Let’s Explore 900 </Text>
-        {/* <FlatList
-          initialNumToRender={userPostPerPage}
-          ListHeaderComponent={
-            <>
-              <View style={globalStyle.header}>
                
-                <TouchableOpacity>
-                  <FontAwesomeicons
-                    name="envelope"
-                    size={20}
-                    color={"#898DAE"}
-                  />
-                </TouchableOpacity>
-              </View>
-              <View>
-                <FlatList
-                  initialNumToRender={4}
-                  showsHorizontalScrollIndicator={false}
-                  horizontal={true}
-                  data={userStoryRenderData}
-                  onEndReachedThreshold={0.5}
-                  onEndReached={() => userStoriesAppendData()}
-                  renderItem={({ item,index }) => {
-                    const isEnd = index === userStoryRenderData?.length - 1;   
-                    return <UserStory
-                    isEnd={isEnd}
-                      firstName={item?.firstName}
-                      profileImage={item?.profileImage}
-                    />
-                }}
-                />
-              </View>
-            </>
-          }
+        <FlatList
+          initialNumToRender={userPostPerPage}
+          // ListHeaderComponent={
+          //   <>
+          //     <View style={globalStyle.header}>
+               
+          //       <TouchableOpacity>
+          //         <FontAwesomeicons
+          //           name="envelope"
+          //           size={20}
+          //           color={"#898DAE"}
+          //         />
+          //       </TouchableOpacity>
+          //     </View>
+          //     <View>
+          //       <FlatList
+          //         initialNumToRender={4}
+          //         showsHorizontalScrollIndicator={false}
+          //         horizontal={true}
+          //         data={userStoryRenderData}
+          //         onEndReachedThreshold={0.5}
+          //         onEndReached={() => userStoriesAppendData()}
+          //         renderItem={({ item,index }) => {
+          //           const isEnd = index === userStoryRenderData?.length - 1;   
+          //           return <UserStory
+          //           isEnd={isEnd}
+          //             firstName={item?.firstName}
+          //             profileImage={item?.profileImage}
+          //           />
+          //       }}
+          //       />
+          //     </View>
+          //   </>
+          // }
           onEndReachedThreshold={0.5}
           onEndReached={() => appendData()}
           showsHorizontalScrollIndicator={false}
@@ -317,7 +306,7 @@ export default function App() {
           )}
           keyExtractor={(item) => item?.id?.toString()} // Unique key for each item
           ListFooterComponent={renderFooter} // Display loading spinner when fetching more data
-        /> */}
+        />
       </SafeAreaView>
     </NavigationContainer>
   );
