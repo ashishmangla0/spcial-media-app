@@ -250,38 +250,38 @@ export default function App() {
                
         <FlatList
           initialNumToRender={userPostPerPage}
-          // ListHeaderComponent={
-          //   <>
-          //     <View style={globalStyle.header}>
+          ListHeaderComponent={
+            <>
+              <View style={globalStyle.header}>
                
-          //       <TouchableOpacity>
-          //         <FontAwesomeicons
-          //           name="envelope"
-          //           size={20}
-          //           color={"#898DAE"}
-          //         />
-          //       </TouchableOpacity>
-          //     </View>
-          //     <View>
-          //       <FlatList
-          //         initialNumToRender={4}
-          //         showsHorizontalScrollIndicator={false}
-          //         horizontal={true}
-          //         data={userStoryRenderData}
-          //         onEndReachedThreshold={0.5}
-          //         onEndReached={() => userStoriesAppendData()}
-          //         renderItem={({ item,index }) => {
-          //           const isEnd = index === userStoryRenderData?.length - 1;   
-          //           return <UserStory
-          //           isEnd={isEnd}
-          //             firstName={item?.firstName}
-          //             profileImage={item?.profileImage}
-          //           />
-          //       }}
-          //       />
-          //     </View>
-          //   </>
-          // }
+                <TouchableOpacity>
+                  <FontAwesomeicons
+                    name="envelope"
+                    size={20}
+                    color={"#898DAE"}
+                  />
+                </TouchableOpacity>
+              </View>
+              <View>
+                <FlatList
+                  initialNumToRender={4}
+                  showsHorizontalScrollIndicator={false}
+                  horizontal={true}
+                  data={userStoryRenderData}
+                  onEndReachedThreshold={0.5}
+                  onEndReached={() => userStoriesAppendData()}
+                  renderItem={({ item,index }) => {
+                    const isEnd = index === userStoryRenderData?.length - 1;   
+                    return <UserStory
+                    isEnd={isEnd}
+                      firstName={item?.firstName}
+                      profileImage={item?.profileImage}
+                    />
+                }}
+                />
+              </View>
+            </>
+          }
           onEndReachedThreshold={0.5}
           onEndReached={() => appendData()}
           showsHorizontalScrollIndicator={false}
