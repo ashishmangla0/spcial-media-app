@@ -39,6 +39,12 @@ const globalStyle = StyleSheet.create({
   userPostContainer: {
     marginHorizontal: 24,
   },
+  backgroundWhite: {
+    backgroundColor: '#FFFFFF',
+  },
+  flex: {
+    flex: 1,
+  },
 });
 
 export default globalStyle;
