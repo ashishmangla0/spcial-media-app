@@ -13,6 +13,7 @@ import FontAwesomeicons from "@expo/vector-icons/FontAwesome6";
 import UserStory from "../../components/UserStory/UserStory";
 import UserPost from "../../components/UserPost/UserPost";
 import styles from "./styles";
+import {Routes} from '../../navigation/Routes';
 
 //data
 const userStories = [
@@ -166,7 +167,7 @@ const userPosts = [
   },
 ];
 
-const Home = () => {
+const Home = ({navigation}) => {
   const userPostPerPage = 4;
   const [userPostsCurrentPage, setUserPostCurrentPage] = useState(1);
   const [userPostLoading, setUserPostLoading] = useState(false);
@@ -243,7 +244,11 @@ const Home = () => {
           <>
             <View style={globalStyle.header}>
               <Title title={"Let’s Explore"} />
-              <TouchableOpacity>
+              <TouchableOpacity
+               style={styles.messageIcon}
+               onPress={() => {
+                    navigation.navigate(Routes.Profile);
+                  }}>
                 <FontAwesomeicons name="envelope" size={20} color={"#898DAE"} />
               </TouchableOpacity>
             </View>

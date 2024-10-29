@@ -1,10 +1,16 @@
-import { SafeAreaView, StatusBar, Text } from "react-native";
+import { SafeAreaView, StatusBar, Text, TouchableOpacity } from "react-native";
 import globalStyle from "../../assets/styles/globalStyle";
 
-const Profile = () => {
+const Profile = ({navigation}) => {
   return (
-    <SafeAreaView style={globalStyle.backgroundWhite}>
+    <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]}>
       <StatusBar />
+      <TouchableOpacity
+      onPress={() => navigation?.goBack()}
+      >
+        <Text>Go back</Text>
+      </TouchableOpacity>
+      
       <Text>I am profile</Text>
     </SafeAreaView>
   );
