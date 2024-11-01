@@ -4,6 +4,7 @@ import {
   FlatList,
   SafeAreaView,
   StatusBar,
+  Text,
   TouchableOpacity,
   View,
 } from "react-native";
@@ -16,7 +17,28 @@ import styles from "./styles";
 import {Routes} from '../../navigation/Routes';
 
 //data
-const userStories = [
+
+export type userStoriesType = {
+  firstName: String,
+    id: Number | String
+    profileImage: String ,
+}
+
+export type userPostsType = {
+  firstName: String,
+    lastName: String,
+    location: String,
+    likes: Number
+    comments: Number
+    bookmarks: Number,
+    image: String,
+    profileImage: String,
+    id: Number | String
+}
+
+
+
+const userStories:userStoriesType[] = [
   {
     firstName: "Joseph",
     id: 1,
@@ -65,7 +87,7 @@ const userStories = [
 ];
 
 //data
-const userPosts = [
+const userPosts:userPostsType[] = [
   {
     firstName: "Allison",
     lastName: "Becker",
@@ -179,7 +201,7 @@ const Home = ({navigation}) => {
   const [userStoryRenderData, setUserStoryRenderData] = useState([]);
 
   //Pagination code
-  const pagination = (database: any, currentPage: any, pageSize: any) => {
+  const pagination = (database: any, currentPage: number, pageSize: number) => {
     const startIndex = (currentPage - 1) * pageSize;
     const endIndex = startIndex + pageSize;
     if (startIndex >= database.length) {
@@ -246,9 +268,10 @@ const Home = ({navigation}) => {
               <Title title={"Let’s Explore"} />
               <TouchableOpacity
                style={styles.messageIcon}
-               onPress={() => {
-                    navigation.navigate(Routes.Profile);
-                  }}>
+              //  onPress={() => {
+              //       navigation.navigate(Routes.Profile);
+              //     }}
+                  >
                 <FontAwesomeicons name="envelope" size={20} color={"#898DAE"} />
               </TouchableOpacity>
             </View>
@@ -265,8 +288,8 @@ const Home = ({navigation}) => {
                   return (
                     <UserStory
                       isEnd={isEnd}
-                      firstName={item?.firstName}
-                      profileImage={item?.profileImage}
+                      firstName={item.firstName}
+                      profileImage={item.profileImage}
                     />
                   );
                 }}
