@@ -10,6 +10,7 @@ import {
 import globalStyle from "../../assets/styles/globalStyle";
 import styles from "./styles";
 import { getFontFamily } from "../../assets/fonts/getFontFamily";
+import { ProfileTabsNavigation } from "../../navigation/MainNavigation";
 
 const Profile = ({ navigation }) => {
   return (
@@ -46,6 +47,13 @@ const Profile = ({ navigation }) => {
             <Text style={styles.statType}>Posts</Text>
           </View>
         </View>
+        <View style={globalStyle.flex}>
+        <ProfileTabsNavigation />
+        </View>
+
+
+
+
       </ScrollView>
     </SafeAreaView>
   );
